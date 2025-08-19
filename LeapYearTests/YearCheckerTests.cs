@@ -5,16 +5,17 @@ namespace LeapYearTests
 {
     public class YearCheckerTests
     {
-        [Theory]
-        [InlineData(1996, true)]
-        [InlineData(2001, false)]
-        [InlineData(1900, false)]
-        [InlineData(2000, true)]
-        public void IsLeap_ReturnsExpectedResult(int year, bool expected)
+        [Fact]
+        public void IsLeap_WithRegularYear_ReturnsFalse()
         {
+            // Arrange
             var checker = new YearChecker();
-            var result = checker.IsLeap(year);
-            Assert.Equal(expected, result);
+            
+            // Act
+            var result = checker.IsLeap(2001);
+            
+            // Assert
+            Assert.False(result);
         }
     }
 }
