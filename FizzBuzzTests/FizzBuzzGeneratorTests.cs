@@ -30,5 +30,31 @@ namespace FizzBuzzTests
             // Assert
             Assert.Equal("Fizz", result);
         }
+
+        [Fact]
+        public void GetValue_WithMultipleOf5_ReturnsBuzz()
+        {
+            // Arrange
+            var fizzBuzz = new FizzBuzzGenerator();
+            
+            // Act
+            var result = fizzBuzz.GetValue(5);
+            
+            // Assert
+            Assert.Equal("Buzz", result);
+        }
+
+        [Fact]
+        public void GetValue_WithMultipleOf15_ReturnsFizzBuzz()
+        {
+            // Arrange
+            var fizzBuzz = new FizzBuzzGenerator();
+            
+            // Act
+            var result = fizzBuzz.GetValue(15);
+            
+            // Assert
+            Assert.Equal("FizzBuzz", result);
+        }
     }
 }
