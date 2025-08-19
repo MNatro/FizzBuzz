@@ -43,5 +43,18 @@ namespace StringSumTests
             // Assert
             Assert.Equal("5", result);
         }
+
+        [Fact]
+        public void Sum_WithNegativeNumbers_TreatsAsZero()
+        {
+            // Arrange
+            var calculator = new SumCalculator();
+            
+            // Act
+            var result = calculator.Sum("-1", "3");
+            
+            // Assert
+            Assert.Equal("3", result);
+        }
     }
 }
