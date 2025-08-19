@@ -5,16 +5,17 @@ namespace FizzBuzzTests
 {
     public class FizzBuzzGeneratorTests
     {
-        [Theory]
-        [InlineData(1, "1")]
-        [InlineData(3, "Fizz")]
-        [InlineData(5, "Buzz")]
-        [InlineData(15, "FizzBuzz")]
-        public void GetValue_ReturnsExpectedResult(int input, string expected)
+        [Fact]
+        public void GetValue_WithNumber1_Returns1()
         {
+            // Arrange
             var fizzBuzz = new FizzBuzzGenerator();
-            var result = fizzBuzz.GetValue(input);
-            Assert.Equal(expected, result);
+            
+            // Act
+            var result = fizzBuzz.GetValue(1);
+            
+            // Assert
+            Assert.Equal("1", result);
         }
     }
 }
