@@ -30,5 +30,18 @@ namespace StringSumTests
             // Assert
             Assert.Equal("3", result);
         }
+
+        [Fact]
+        public void Sum_WithInvalidInput_TreatsAsZero()
+        {
+            // Arrange
+            var calculator = new SumCalculator();
+            
+            // Act
+            var result = calculator.Sum("abc", "5");
+            
+            // Assert
+            Assert.Equal("5", result);
+        }
     }
 }
